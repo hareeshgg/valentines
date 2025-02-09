@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Valentines</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            justify-content: center;
+            align-items: center;  
+            display: flex;
+            padding: 10px;  
+            
+        }
+
+        .container {   
+            background: white;
+            padding: 20px;
+            width: 100%; 
+            
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;                    
+        }
+
+        .container p {
+            font-size: 1.5rem;
+        }
+
+        .container img {
+            width: 100%;
+            height: auto;
+            max-width: 300px; 
+            border-radius: 20px;
+        }
+        
+        .buttons {
+            margin-top: 2rem;
+        }
+
+        .buttons button {
+            font-size: 1rem;
+            padding: 0.5rem;
+            color: aliceblue;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            width: 4.4rem;
+        }
+
+        .buttons #yes {
+            background-color: green;
+        }
+
+        .buttons #no {
+            background-color: red;
+        }
+
+   
+        @media (max-width: 600px) {
+            
+            .container img {
+                max-width: 200px; 
+            }
+        }
+    </style>
+    <script>
+        let fontSize = 1.2;
+        let buttonWidth = 4.6;
+        function nobutton() {        
+            document.getElementById("yes").style.fontSize = fontSize + "rem";
+            document.getElementById("yes").style.width = buttonWidth + "rem";
+            document.getElementById("img").src="cat1.gif";
+            fontSize += 1;
+            buttonWidth += 2; 
+        }
+
+        function yesbutton() {
+            document.getElementById("img").src="cat2.gif";
+            document.getElementById("para").textContent = "I Love You!";
+            document.getElementById("no").style.display = "none";
+            document.getElementById("yes").style.fontSize = "1rem";
+            document.getElementById("yes").style.width = "4.4rem";
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <img src="cat1.gif" id="img"></img>
+        <p id="para">Will you be my Valentine?</p>
+        <div class="buttons">
+            <button id="yes" onclick="yesbutton()">Yes</button>
+            <button id="no" onclick="nobutton()">No</button>
+        </div>     
+    </div>
+</body>
+</html>
